@@ -1,0 +1,17 @@
+1662038389057	geckodriver	INFO	Listening on 127.0.0.1:46125
+1662038389065	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofilec7ql0n"
+1662038446174	geckodriver	INFO	Listening on 127.0.0.1:44191
+1662038446187	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofileYdky96"
+1662038837386	geckodriver	INFO	Listening on 127.0.0.1:45635
+1662038837394	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofileKVT5sS"
+1662040821316	geckodriver	INFO	Listening on 127.0.0.1:46779
+1662040821327	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofilemCRZDL"
+1662040991811	geckodriver	INFO	Listening on 127.0.0.1:60741
+1662040991998	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofileS1vuA9"
+[GFX1-]: glxtest: libEGL missing
+1662041000002	Marionette	INFO	Marionette enabled
+1662041000012	Marionette	INFO	Listening on port 40159
+Read port: 40159
+1662041000446	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileS1vuA9/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
