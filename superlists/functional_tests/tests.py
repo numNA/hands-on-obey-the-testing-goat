@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
 import time
 
-MAX_WAIT = 15
+MAX_WAIT = 3
 
 class NewVisitorTest(LiveServerTestCase):
 
@@ -60,7 +60,6 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         inputbox.send_keys('Use peacock feathers to make a fly')
         inputbox.send_keys(Keys.ENTER)
-#        time.sleep(1) #Prevent Reload Error
 
         # The page updates again, and now shows both items on her list
         self.wait_for_row_in_list_table('2: Use peacock feathers to make a fly')
@@ -78,7 +77,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         #She notices that her list has a unique URL
         edith_list_url = self.browser.current_url
-        self.assertRegex(edith_list_url, '/lits/.+')
+        self.assertRegex(edith_list_url, '/lists/.+')
 
         #Now a new user, Francis, comes along to the site.
 
@@ -89,16 +88,18 @@ class NewVisitorTest(LiveServerTestCase):
 
         # Francis visits the home page. Thers is no sign of Edith's list
         self.browser.get(self.live_server_url)
-        page_text = self.breowser.find_element_by_tag_name('body').text
+        page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Buy peacock feathers', page_text)
         self.assertNotIn('make a fly', page_text)
 
         #Francis starts a new list by entering a new item. 
         #He is less interesting than Edith ...
         inputbox = self.browser.find_element_by_id('id_new_item')
+
         inputbox.send_keys('Buy milk')
         inputbox.send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_tabel('1: Buy milk')
+
+        self.wait_for_row_in_list_table('1: Buy milk')
 
         #Francis gets his own unique URL
         francis_list_url = self.browser.current_url
